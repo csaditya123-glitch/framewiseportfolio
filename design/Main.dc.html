@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Framewise.ai — Home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+a{color:#2E5391;text-decoration:none}
+a:hover{color:#23437A}
+.fw-wrap{max-width:1264px;margin:0 auto;padding:0 40px}
+.fw-nav a{color:#3F4E66;transition:color .2s}
+.fw-nav a:hover{color:#14233B}
+.fw-nav a:focus-visible,.fw-btn:focus-visible,.fw-menu:focus-visible,.fw-repo:focus-visible{outline:2px solid #4775C9;outline-offset:3px}
+.fw-btn{transition:background-color .2s,border-color .2s,color .2s}
+.fw-btn-primary:hover{background:#23437A !important;color:#fff}
+.fw-menu{display:none}
+.fw-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:56px;align-items:center}
+.fw-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.fw-contact{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:64px}
+.fw-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px}
+.fw-dots{background-image:radial-gradient(#CFDDF3 1px,transparent 1px);background-size:20px 20px}
+.fw-card{transition:border-color .2s}
+.fw-card:hover{border-color:#BFD2F0 !important}
+.fw-repo{transition:background-color .2s,border-color .2s,color .2s}
+.fw-repo:hover{background:#EEF5FF !important;border-color:#BFD2F0 !important;color:#14233B !important}
+.fw-track{display:flex;width:max-content;animation:fw-marquee 48s linear infinite}
+.fw-marquee:hover .fw-track{animation-play-state:paused}
+@keyframes fw-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.fw-bar{animation:fw-wave 1.6s ease-in-out infinite;transform-origin:center}
+@keyframes fw-wave{0%,100%{transform:scaleY(.55)}50%{transform:scaleY(1)}}
+.fw-flow{stroke-dasharray:4 6;animation:fw-dash 2.4s linear infinite}
+@keyframes fw-dash{to{stroke-dashoffset:-20}}
+.fw-field{width:100%;font:inherit;font-size:15px;color:#14233B;background:#fff;border:1px solid #DCE4F0;border-radius:8px;padding:12px 14px;transition:border-color .2s}
+.fw-field:focus{outline:none;border-color:#4775C9;box-shadow:0 0 0 3px #DCEAFF}
+@media (prefers-reduced-motion:reduce){.fw-track,.fw-bar,.fw-flow{animation:none}html{scroll-behavior:auto}}
+@media (max-width:1180px){.fw-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:1080px){.fw-hero{grid-template-columns:minmax(0,1fr);gap:48px}.fw-contact{grid-template-columns:minmax(0,1fr);gap:40px}}
+@media (max-width:760px){.fw-wrap{padding:0 20px}.fw-nav{display:none !important}.fw-menu{display:inline-flex}.fw-cards{grid-template-columns:minmax(0,1fr)}.fw-visual{transform:scale(.62);transform-origin:top left;margin-bottom:-190px}.fw-h1{font-size:40px !important}.fw-h2{font-size:30px !important}.fw-sec{padding-top:72px !important;padding-bottom:72px !important}}
+</style>
+</helmet>
+
+<div style="font-family: 'Manrope', system-ui, sans-serif; color: #14233B; background: #FFFFFF; -webkit-font-smoothing: antialiased">
+
+<!-- HEADER -->
+<header style="position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.86); backdrop-filter: blur(12px); border-bottom: 1px solid #EDF1F7">
+<div class="fw-wrap" style="height: 72px; display: flex; align-items: center; justify-content: space-between">
+<a href="Main.dc.html" aria-label="Framewise.ai home" style="display: flex; align-items: center; gap: 10px; color: #14233B">
+<svg width="26" height="26" viewBox="0 0 400 400" fill="none" aria-hidden="true"><rect x="0" y="8" width="400" height="106" rx="53" fill="#2E5391"></rect><rect x="0" y="138" width="246" height="106" rx="53" fill="#4775C9"></rect><rect x="0" y="270" width="108" height="120" rx="44" fill="#4775C9"></rect></svg>
+<span style="font-size: 19px; font-weight: 700; letter-spacing: -0.01em">Framewise<span style="color: #4775C9">.ai</span></span>
+</a>
+<nav class="fw-nav" aria-label="Primary" style="display: flex; align-items: center; gap: 36px; font-size: 15px; font-weight: 500">
+<a href="#projects">Projects</a>
+<a href="Blog.dc.html">Blog</a>
+<a href="About.dc.html">About Us</a>
+<a href="#contact">Contact</a>
+</nav>
+<button class="fw-menu" type="button" aria-label="{{menuLabel}}" aria-expanded="{{menuOpen}}" onClick="{{toggleMenu}}" style="width: 44px; height: 44px; align-items: center; justify-content: center; background: #FFFFFF; border: 1px solid #E3EAF4; border-radius: 8px; cursor: pointer; color: #14233B">
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"></path></svg>
+</button>
+</div>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+<nav aria-label="Mobile" style="border-top: 1px solid #EDF1F7; background: #FFFFFF; padding: 8px 20px 16px; display: flex; flex-direction: column">
+<a href="#projects" onClick="{{closeMenu}}" style="padding: 14px 0; font-size: 17px; font-weight: 600; color: #14233B; border-bottom: 1px solid #F0F3F8">Projects</a>
+<a href="Blog.dc.html" onClick="{{closeMenu}}" style="padding: 14px 0; font-size: 17px; font-weight: 600; color: #14233B; border-bottom: 1px solid #F0F3F8">Blog</a>
+<a href="About.dc.html" onClick="{{closeMenu}}" style="padding: 14px 0; font-size: 17px; font-weight: 600; color: #14233B; border-bottom: 1px solid #F0F3F8">About Us</a>
+<a href="#contact" onClick="{{closeMenu}}" style="padding: 14px 0; font-size: 17px; font-weight: 600; color: #14233B">Contact</a>
+</nav>
+</sc-if>
+</header>
+
+<!-- HERO -->
+<section style="background: linear-gradient(180deg, #F5F9FF 0%, #FFFFFF 100%); overflow: hidden">
+<div class="fw-wrap fw-hero" style="padding-top: 72px; padding-bottom: 80px">
+<div style="display: flex; flex-direction: column; gap: 28px; max-width: 540px">
+<div style="display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #2E5391; background: #EEF5FF; border: 1px solid #DCEAFF; border-radius: 6px; padding: 6px 10px">
+<span style="width: 6px; height: 6px; border-radius: 3px; background: #4775C9"></span>AI engineering &amp; platform
+</div>
+<h1 class="fw-h1" style="margin: 0; font-size: 58px; line-height: 1.06; font-weight: 700; letter-spacing: -0.03em; color: #14233B">AI engineered for the way your business works.</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #5B6B82; max-width: 480px">We design, build and integrate AI systems across voice, data and operations — connected to the tools and workflows you already run.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px; padding-top: 4px">
+<a class="fw-btn fw-btn-primary" href="#projects" style="display: inline-flex; align-items: center; gap: 10px; height: 50px; padding: 0 22px; background: #2E5391; color: #FFFFFF; border-radius: 8px; font-size: 15px; font-weight: 600">Explore our work
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M3.5 8.5 8 13l4.5-4.5"></path></svg></a>
+<a class="fw-btn" href="#contact" style="font-size: 15px; font-weight: 600; color: #3F4E66; padding: 12px 4px">Talk to us →</a>
+</div>
+</div>
+
+<div class="fw-visual" aria-hidden="true" style="position: relative; width: 600px; height: 460px; justify-self: end">
+<div class="fw-dots" style="position: absolute; inset: 0; border-radius: 20px; border: 1px solid #E3EAF4; background-color: #F7FAFF"></div>
+<svg width="600" height="460" viewBox="0 0 600 460" fill="none" style="position: absolute; inset: 0">
+<path class="fw-flow" d="M214 118 C 250 118, 250 230, 232 230" stroke="#9DB8E8" stroke-width="1.5"></path>
+<path class="fw-flow" d="M214 352 C 250 352, 250 240, 232 240" stroke="#9DB8E8" stroke-width="1.5"></path>
+<path class="fw-flow" d="M372 235 L 404 235" stroke="#4775C9" stroke-width="1.5"></path>
+</svg>
+<div style="position: absolute; left: 28px; top: 44px; width: 186px; background: #FFFFFF; border: 1px solid #E3EAF4; border-radius: 12px; padding: 14px; box-shadow: 0 8px 24px rgba(46,83,145,0.06)">
+<div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px; font-weight: 600; color: #5B6B82; letter-spacing: 0.04em; text-transform: uppercase">Voice<span style="display: flex; align-items: center; gap: 5px; color: #2E5391; text-transform: none; letter-spacing: 0"><span style="width: 6px; height: 6px; border-radius: 3px; background: #4775C9"></span>Live</span></div>
+<div style="display: flex; align-items: center; gap: 3px; height: 40px; margin: 12px 0 10px">
+<sc-for list="{{bars}}" as="b" hint-placeholder-count="22"><span class="fw-bar" style="{{b.style}}"></span></sc-for>
+</div>
+<div style="font-size: 11.5px; line-height: 1.45; color: #3F4E66; background: #F7FAFF; border-radius: 6px; padding: 7px 9px">Intent detected · routed to workflow</div>
+</div>
+<div style="position: absolute; left: 28px; top: 268px; width: 186px; background: #FFFFFF; border: 1px solid #E3EAF4; border-radius: 12px; padding: 14px; box-shadow: 0 8px 24px rgba(46,83,145,0.06)">
+<div style="font-size: 11px; font-weight: 600; color: #5B6B82; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 10px">Data</div>
+<div style="display: flex; gap: 8px; align-items: center; margin-bottom: 10px">
+<div style="width: 26px; height: 32px; border: 1px solid #DCE4F0; border-radius: 4px; background: #F7FAFF; display: flex; flex-direction: column; gap: 3px; padding: 6px 5px"><span style="height: 2px; background: #C9D7EE"></span><span style="height: 2px; background: #C9D7EE"></span><span style="height: 2px; width: 60%; background: #C9D7EE"></span></div>
+<svg width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="#9DB8E8" stroke-width="1.5"><path d="M1 5h15M12 1l4 4-4 4"></path></svg>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 4px">
+<span style="height: 7px; border-radius: 2px; background: #DCEAFF"></span><span style="height: 7px; border-radius: 2px; background: #EEF5FF"></span><span style="height: 7px; border-radius: 2px; background: #DCEAFF; width: 70%"></span>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; font-size: 10.5px; color: #3F4E66">
+<span style="background: #F7FAFF; padding: 4px 6px; border-radius: 4px">field</span><span style="background: #F7FAFF; padding: 4px 6px; border-radius: 4px; color: #2E5391">structured</span>
+<span style="background: #F7FAFF; padding: 4px 6px; border-radius: 4px">source</span><span style="background: #F7FAFF; padding: 4px 6px; border-radius: 4px; color: #2E5391">linked</span>
+</div>
+</div>
+<div style="position: absolute; left: 232px; top: 168px; width: 140px; height: 134px; background: #FFFFFF; border: 1px solid #BFD2F0; border-radius: 14px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 14px 36px rgba(46,83,145,0.12)">
+<svg width="26" height="26" viewBox="0 0 400 400" fill="none"><rect x="0" y="8" width="400" height="106" rx="53" fill="#2E5391"></rect><rect x="0" y="138" width="246" height="106" rx="53" fill="#4775C9"></rect><rect x="0" y="270" width="108" height="120" rx="44" fill="#4775C9"></rect></svg>
+<div>
+<div style="font-size: 13px; font-weight: 700; color: #14233B">Orchestration</div>
+<div style="font-size: 11px; color: #5B6B82; margin-top: 2px">models · logic · memory</div>
+</div>
+<div style="display: flex; gap: 4px"><span style="flex: 3; height: 4px; border-radius: 2px; background: #4775C9"></span><span style="flex: 2; height: 4px; border-radius: 2px; background: #9DB8E8"></span><span style="flex: 1; height: 4px; border-radius: 2px; background: #DCEAFF"></span></div>
+</div>
+<div style="position: absolute; left: 404px; top: 100px; width: 168px; background: #FFFFFF; border: 1px solid #E3EAF4; border-radius: 12px; padding: 14px; box-shadow: 0 8px 24px rgba(46,83,145,0.06)">
+<div style="font-size: 11px; font-weight: 600; color: #5B6B82; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 10px">Your systems</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<sc-for list="{{systems}}" as="s" hint-placeholder-count="5">
+<div style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; font-weight: 500; color: #14233B; background: #F7FAFF; border: 1px solid #EDF2F9; border-radius: 6px; padding: 8px 10px">{{s}}<span style="width: 6px; height: 6px; border-radius: 3px; background: #4775C9"></span></div>
+</sc-for>
+</div>
+<div style="margin-top: 12px; border-top: 1px dashed #DCE4F0; padding-top: 10px; font-size: 11px; color: #5B6B82">Your environment · your rules</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- LOGO MARQUEE -->
+<section aria-label="Organisations we have worked with" style="border-top: 1px solid #EDF1F7; border-bottom: 1px solid #EDF1F7; background: #FFFFFF">
+<div class="fw-wrap" style="display: flex; align-items: center; gap: 32px; padding-top: 28px; padding-bottom: 28px">
+<div style="flex: none; font-size: 13px; font-weight: 600; color: #5B6B82; max-width: 150px; line-height: 1.4">Teams we’ve built with</div>
+<div class="fw-marquee" style="flex: 1; min-width: 0; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)">
+<div class="fw-track">
+<sc-for list="{{logos}}" as="l" hint-placeholder-count="16">
+<div aria-hidden="{{l.hidden}}" style="flex: none; width: 152px; height: 40px; margin-right: 56px; display: flex; align-items: center; justify-content: center; gap: 8px; color: #8A98AD; font-size: 13px; font-weight: 600; border: 1px dashed #D6E0EE; border-radius: 6px">
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1.5" y="1.5" width="13" height="13" rx="3"></rect><path d="M4.5 10.5 7 8l2 2 2.5-3"></path></svg>{{l.name}}
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="fw-sec" style="padding-top: 112px; padding-bottom: 112px; scroll-margin-top: 72px">
+<div class="fw-wrap">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 48px">
+<div style="max-width: 620px">
+<div style="font-size: 13px; font-weight: 600; color: #2E5391; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 16px">Projects</div>
+<h2 class="fw-h2" style="margin: 0; font-size: 42px; line-height: 1.12; font-weight: 700; letter-spacing: -0.025em">AI for real-world operations.</h2>
+</div>
+<p style="margin: 0; max-width: 400px; font-size: 17px; line-height: 1.6; color: #5B6B82">We build intelligent systems across voice, data, and the infrastructure that connects them.</p>
+</div>
+
+<div class="fw-cards">
+<sc-for list="{{projects}}" as="p" hint-placeholder-count="4">
+<article class="fw-card" style="display: flex; flex-direction: column; gap: 14px; background: #FFFFFF; border: 1px solid #E3EAF4; border-radius: 14px; padding: 24px; min-height: 300px">
+<div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 6px">
+<span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 10px; background: #EEF5FF; border: 1px solid #DCEAFF; display: flex; align-items: center; justify-content: center; color: #2E5391">
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="{{p.icon}}"></path></svg>
+</span>
+<sc-if value="{{p.hasRepo}}" hint-placeholder-val="{{ true }}">
+<a class="fw-repo" href="{{p.repo}}" target="_blank" rel="noopener" aria-label="{{p.repoLabel}}" style="display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 10px; border: 1px solid #E3EAF4; border-radius: 8px; background: #FFFFFF; color: #3F4E66; font-size: 12.5px; font-weight: 600">
+<svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>GitHub<span aria-hidden="true">↗</span>
+</a>
+</sc-if>
+</div>
+<div style="font-size: 12px; font-weight: 600; color: #2E5391; letter-spacing: 0.06em; text-transform: uppercase">{{p.eyebrow}}</div>
+<h3 style="margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.01em">{{p.title}}</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5B6B82">{{p.desc}}</p>
+<div style="margin-top: auto; padding-top: 14px; border-top: 1px solid #EDF1F7; font-size: 13px; font-weight: 600; color: #3F4E66">{{p.meta}}</div>
+</article>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="fw-sec" style="padding-top: 112px; padding-bottom: 112px; background: linear-gradient(180deg, #F7FAFF 0%, #EEF5FF 100%); border-top: 1px solid #E8EEF7; scroll-margin-top: 72px">
+<div class="fw-wrap fw-contact">
+<div style="display: flex; flex-direction: column; gap: 24px">
+<div style="font-size: 13px; font-weight: 600; color: #2E5391; letter-spacing: 0.06em; text-transform: uppercase">Contact</div>
+<h2 class="fw-h2" style="margin: 0; font-size: 42px; line-height: 1.12; font-weight: 700; letter-spacing: -0.025em">Bring us a problem worth solving.</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #5B6B82; max-width: 440px">Tell us about the workflow, the data and the systems involved. We’ll come back with how we’d approach it.</p>
+<div style="display: flex; flex-direction: column; margin-top: 12px; border-top: 1px solid #DCE4F0">
+<a href="mailto:kowshik@framewise.ai" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid #DCE4F0; color: #14233B; font-size: 15px; font-weight: 600"><span><span style="display: block; font-size: 12px; font-weight: 500; color: #5B6B82; margin-bottom: 2px">Email</span>kowshik@framewise.ai</span><span aria-hidden="true" style="color: #2E5391">↗</span></a>
+<a href="https://calendly.com/kowshikchilamkurthy/30min" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid #DCE4F0; color: #14233B; font-size: 15px; font-weight: 600"><span><span style="display: block; font-size: 12px; font-weight: 500; color: #5B6B82; margin-bottom: 2px">Prefer to talk?</span>Book a 30-minute call</span><span aria-hidden="true" style="color: #2E5391">↗</span></a>
+<a href="https://www.linkedin.com/company/cliqq-ai" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid #DCE4F0; color: #14233B; font-size: 15px; font-weight: 600"><span><span style="display: block; font-size: 12px; font-weight: 500; color: #5B6B82; margin-bottom: 2px">Follow</span>LinkedIn</span><span aria-hidden="true" style="color: #2E5391">↗</span></a>
+</div>
+</div>
+<form aria-label="Contact form" style="background: #FFFFFF; border: 1px solid #E3EAF4; border-radius: 16px; padding: 36px; display: flex; flex-direction: column; gap: 20px; box-shadow: 0 20px 48px rgba(46,83,145,0.06)">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px">
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 600; color: #3F4E66">Name<input class="fw-field" type="text" name="name" autocomplete="name"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 600; color: #3F4E66">Work email<input class="fw-field" type="email" name="email" autocomplete="email"></label>
+</div>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 600; color: #3F4E66">Company<input class="fw-field" type="text" name="company" autocomplete="organization"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 600; color: #3F4E66">What are you trying to solve?<textarea class="fw-field" name="message" rows="5" style="resize: vertical"></textarea></label>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<span style="font-size: 13px; color: #5B6B82">We usually reply within two working days.</span>
+<button class="fw-btn fw-btn-primary" type="button" style="height: 50px; padding: 0 24px; background: #2E5391; color: #FFFFFF; border: 0; border-radius: 8px; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Send message</button>
+</div>
+</form>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background: #FFFFFF; border-top: 1px solid #E8EEF7">
+<div class="fw-wrap fw-foot" style="padding-top: 56px; padding-bottom: 40px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 320px">
+<a href="Main.dc.html" aria-label="Framewise.ai home" style="display: flex; align-items: center; gap: 10px; color: #14233B">
+<svg width="22" height="22" viewBox="0 0 400 400" fill="none" aria-hidden="true"><rect x="0" y="8" width="400" height="106" rx="53" fill="#2E5391"></rect><rect x="0" y="138" width="246" height="106" rx="53" fill="#4775C9"></rect><rect x="0" y="270" width="108" height="120" rx="44" fill="#4775C9"></rect></svg>
+<span style="font-size: 17px; font-weight: 700">Framewise<span style="color: #4775C9">.ai</span></span>
+</a>
+<p style="margin: 0; font-size: 14px; line-height: 1.6; color: #5B6B82">AI systems, built around the way businesses actually work.</p>
+</div>
+<nav class="fw-nav" aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 32px; font-size: 14px; font-weight: 500; align-items: flex-start">
+<a href="#projects">Projects</a>
+<a href="Blog.dc.html">Blog</a>
+<a href="About.dc.html">About Us</a>
+<a href="#contact">Contact</a>
+<a href="https://www.linkedin.com/company/cliqq-ai">LinkedIn</a>
+</nav>
+</div>
+<div class="fw-wrap" style="padding-bottom: 32px">
+<div style="border-top: 1px solid #EDF1F7; padding-top: 24px; font-size: 13px; color: #5B6B82">© Framewise.ai Pvt. Ltd, 2026</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2560}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { menuOpen: false };
+  }
+  renderVals() {
+    var open = !!this.state.menuOpen;
+    var bars = [];
+    for (var i = 0; i < 22; i++) {
+      var v = 0.35 + 0.65 * Math.abs(Math.sin(i * 1.7) * Math.cos(i * 0.6));
+      bars.push({ style: 'display:block;width:4px;height:' + Math.round(40 * v) + 'px;border-radius:2px;background:' + (i % 5 === 0 ? '#4775C9' : '#9DB8E8') + ';animation-delay:' + (i * 0.07).toFixed(2) + 's' });
+    }
+    var logos = [];
+    for (var j = 0; j < 16; j++) logos.push({ name: 'Client logo ' + ((j % 8) + 1), hidden: j < 8 ? 'false' : 'true' });
+    return {
+      menuOpen: open,
+      menuLabel: open ? 'Close menu' : 'Open menu',
+      toggleMenu: () => this.setState({ menuOpen: !this.state.menuOpen }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      bars: bars,
+      systems: ['CRM', 'ERP', 'Telephony', 'Data warehouse', 'Internal tools'],
+      logos: logos,
+      projects: [
+        { eyebrow: 'Voice AI', title: 'VoicEra', hasRepo: true, repo: 'https://github.com/COSS-India/VoicEra', repoLabel: 'VoicEra on GitHub (opens in a new tab)',
+          icon: 'M10 2.5v9M6.5 7.5v2a3.5 3.5 0 0 0 7 0v-2M10 13v4.5M7 17.5h6',
+          desc: 'Open-source voice AI stack for real-time telephony agents in Indian languages — your providers, your infrastructure, your data.',
+          meta: 'Telephony · Multilingual · Self-hostable' },
+        { eyebrow: 'Data & Intelligence', title: 'Dhara', hasRepo: true, repo: 'https://github.com/Project-Dhara/Dhara', repoLabel: 'Dhara on GitHub (opens in a new tab)',
+          icon: 'M10 3c3.9 0 7 1.1 7 2.5S13.9 8 10 8 3 6.9 3 5.5 6.1 3 10 3ZM3 5.5v9C3 15.9 6.1 17 10 17s7-1.1 7-2.5v-9M3 10c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5',
+          desc: 'An open toolkit that takes a dataset through inventory, description, harmonisation and cataloguing — making data discoverable and AI-ready.',
+          meta: 'Excel · PDF · SQL → API & MCP' },
+        { eyebrow: 'Built into your operations', title: 'Human in the Loop', hasRepo: false, repo: '', repoLabel: '',
+          icon: 'M7 8.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM2.5 16.5c.6-2.6 2.3-4 4.5-4s3.9 1.4 4.5 4M13 9.5l1.8 1.8L18 8',
+          desc: 'AI that knows when to hand over. Your people review, approve or step in at the moments that matter — inside the systems they already use.',
+          meta: 'Review · Approval · Escalation' },
+        { eyebrow: 'Conversational AI', title: 'Mock Interviews', hasRepo: false, repo: '', repoLabel: '',
+          icon: 'M3 4.5h10a1.5 1.5 0 0 1 1.5 1.5v5A1.5 1.5 0 0 1 13 12.5H8l-3.5 3v-3H3A1.5 1.5 0 0 1 1.5 11V6A1.5 1.5 0 0 1 3 4.5ZM17 8.5h.5A1.5 1.5 0 0 1 19 10v4.5',
+          desc: 'Interviews conducted by AI that adapt as the conversation unfolds, then show each candidate how they did — with feedback refined through reinforcement learning.',
+          meta: '120,000+ minutes in conversation' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

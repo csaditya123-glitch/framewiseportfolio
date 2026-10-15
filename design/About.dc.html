@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Framewise.ai — About Us</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:#2E5391;text-decoration:none}
+a:hover{color:#23437A}
+.fw-wrap{max-width:1264px;margin:0 auto;padding:0 40px}
+.fw-nav a{color:#3F4E66;transition:color .2s}
+.fw-nav a:hover{color:#14233B}
+.fw-nav a:focus-visible,.fw-btn:focus-visible,.fw-menu:focus-visible{outline:2px solid #4775C9;outline-offset:3px}
+.fw-btn-primary:hover{background:#23437A !important;color:#fff}
+.fw-menu{display:none}
+.fw-split{display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:64px}
+.fw-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.fw-three{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.fw-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px}
+.fw-dots{background-image:radial-gradient(#CFDDF3 1px,transparent 1px);background-size:20px 20px}
+@media (max-width:1080px){.fw-split{grid-template-columns:minmax(0,1fr);gap:32px}.fw-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.fw-three{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){.fw-wrap{padding:0 20px}.fw-nav{display:none !important}.fw-menu{display:inline-flex}.fw-steps{grid-template-columns:minmax(0,1fr)}.fw-h1{font-size:40px !important}.fw-h2{font-size:30px !important}.fw-sec{padding-top:72px !important;padding-bottom:72px !important}}
+</style>
+</helmet>
+
+<div style="font-family: 'Manrope', system-ui, sans-serif; color: #14233B; background: #FFFFFF; -webkit-font-smoothing: antialiased">
+
+<header style="position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.86); backdrop-filter: blur(12px); border-bottom: 1px solid #EDF1F7">
+<div class="fw-wrap" style="height: 72px; display: flex; align-items: center; justify-content: space-between">
+<a href="Main.dc.html" aria-label="Framewise.ai home" style="display: flex; align-items: center; gap: 10px; color: #14233B">
+<svg width="26" height="26" viewBox="0 0 400 400" fill="none" aria-hidden="true"><rect x="0" y="8" width="400" height="106" rx="53" fill="#2E5391"></rect><rect x="0" y="138" width="246" height="106" rx="53" fill="#4775C9"></rect><rect x="0" y="270" width="108" height="120" rx="44" fill="#4775C9"></rect></svg>
+<span style="font-size: 19px; font-weight: 700; letter-spacing: -0.01em">Framewise<span style="color: #4775C9">.ai</span></span>
+</a>
+<nav class="fw-nav" aria-label="Primary" style="display: flex; align-items: center; gap: 36px; font-size: 15px; font-weight: 500">
+<a href="Main.dc.html">Projects</a>
+<a href="Blog.dc.html">Blog</a>
+<a href="About.dc.html" aria-current="page" style="color: #14233B; font-weight: 600; box-shadow: inset 0 -2px 0 #4775C9; padding: 6px 0">About Us</a>
+<a href="Main.dc.html">Contact</a>
+</nav>
+<button class="fw-menu" type="button" aria-label="{{menuLabel}}" aria-expanded="{{menuOpen}}" onClick="{{toggleMenu}}" style="width: 44px; height: 44px; align-items: center; justify-content: center; background: #FFFFFF; border: 1px solid #E3EAF4; border-radius: 8px; cursor: pointer; color: #14233B">
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"></path></svg>
+</button>
+</div>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+<nav aria-label="Mobile" style="border-top: 1px solid #EDF1F7; background: #FFFFFF; padding: 8px 20px 16px; display: flex; flex-direction: column">
+<a href="Main.dc.html" onClick="{{closeMenu}}" style="padding: 14px 0; font-size: 17px; font-weight: 600; color: #14233B; border-bottom: 1px solid #F0F3F8">Projects</a>
+<a href="Blog.dc.html" onClick="{{closeMenu}}" style="padding: 14px 0; font-size: 17px; font-weight: 600; color: #14233B; border-bottom: 1px solid #F0F3F8">Blog</a>
+<a href="About.dc.html" onClick="{{closeMenu}}" style="padding: 14px 0; font-size: 17px; font-weight: 600; color: #2E5391; border-bottom: 1px solid #F0F3F8">About Us</a>
+<a href="Main.dc.html" onClick="{{closeMenu}}" style="padding: 14px 0; font-size: 17px; font-weight: 600; color: #14233B">Contact</a>
+</nav>
+</sc-if>
+</header>
+
+<!-- INTRO -->
+<section style="background: linear-gradient(180deg, #F5F9FF 0%, #FFFFFF 100%)">
+<div class="fw-wrap" style="padding-top: 104px; padding-bottom: 96px">
+<div style="font-size: 13px; font-weight: 600; color: #2E5391; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 20px">About Framewise.ai</div>
+<h1 class="fw-h1" style="margin: 0; max-width: 880px; font-size: 56px; line-height: 1.08; font-weight: 700; letter-spacing: -0.03em">We build AI systems that hold up in real operations.</h1>
+<p style="margin: 28px 0 0; max-width: 640px; font-size: 19px; line-height: 1.6; color: #5B6B82">Framewise.ai is a platform-led AI engineering company. We combine our own platform with hands-on engineering to take a business problem from first conversation to a working system.</p>
+</div>
+</section>
+
+<!-- WHAT WE ARE -->
+<section class="fw-sec" style="padding-top: 104px; padding-bottom: 104px; border-top: 1px solid #EDF1F7">
+<div class="fw-wrap fw-split">
+<h2 class="fw-h2" style="margin: 0; font-size: 38px; line-height: 1.15; font-weight: 700; letter-spacing: -0.025em">Platform thinking.<br>Engineering execution.</h2>
+<div style="display: flex; flex-direction: column; gap: 20px; font-size: 17px; line-height: 1.7; color: #3F4E66">
+<p style="margin: 0">Most AI projects stall between the demo and the day-to-day. The model works; the system around it doesn’t. That gap — integrations, data, edge cases, operational constraints — is where we spend our time.</p>
+<p style="margin: 0">We aren’t a chatbot vendor, and we aren’t a strategy-only consultancy. We bring reusable platform components for voice, data and orchestration, and the engineering to shape them around how your business actually runs.</p>
+</div>
+</div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="fw-sec" style="padding-top: 104px; padding-bottom: 104px; background: #F7FAFF; border-top: 1px solid #E8EEF7; border-bottom: 1px solid #E8EEF7">
+<div class="fw-wrap">
+<div style="max-width: 620px; margin-bottom: 48px">
+<div style="font-size: 13px; font-weight: 600; color: #2E5391; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 16px">How we work</div>
+<h2 class="fw-h2" style="margin: 0; font-size: 38px; line-height: 1.15; font-weight: 700; letter-spacing: -0.025em">From problem to production.</h2>
+</div>
+<ol class="fw-steps" style="list-style: none; margin: 0; padding: 0">
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="4">
+<li style="background: #FFFFFF; border: 1px solid #E3EAF4; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 10px">
+<span style="width: 32px; height: 32px; border-radius: 8px; background: #EEF5FF; border: 1px solid #DCEAFF; color: #2E5391; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center">{{s.n}}</span>
+<span style="flex: 1; height: 1px; background: #E3EAF4"></span>
+</div>
+<h3 style="margin: 0; font-size: 19px; font-weight: 700">{{s.t}}</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5B6B82">{{s.d}}</p>
+</li>
+</sc-for>
+</ol>
+</div>
+</section>
+
+<!-- WHAT WE BUILD -->
+<section class="fw-sec" style="padding-top: 104px; padding-bottom: 104px">
+<div class="fw-wrap">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 40px">
+<h2 class="fw-h2" style="margin: 0; font-size: 38px; line-height: 1.15; font-weight: 700; letter-spacing: -0.025em">What we build</h2>
+<a href="Main.dc.html" style="font-size: 15px; font-weight: 600">See our projects →</a>
+</div>
+<div class="fw-three">
+<sc-for list="{{areas}}" as="a" hint-placeholder-count="3">
+<div style="border-top: 2px solid #4775C9; padding-top: 24px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-size: 19px; font-weight: 700">{{a.t}}</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.65; color: #5B6B82">{{a.d}}</p>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- TEAM PLACEHOLDER -->
+<section class="fw-sec" style="padding-top: 0; padding-bottom: 104px">
+<div class="fw-wrap">
+<div class="fw-dots" style="border: 1px dashed #BFD2F0; border-radius: 16px; background-color: #F7FAFF; padding: 48px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start">
+<div style="font-size: 13px; font-weight: 600; color: #2E5391; letter-spacing: 0.06em; text-transform: uppercase">Team</div>
+<h2 class="fw-h2" style="margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.02em">[Team section — add verified names, roles and photos]</h2>
+<p style="margin: 0; max-width: 560px; font-size: 15px; line-height: 1.6; color: #5B6B82">Placeholder. Populate only with approved team details; remove this block if the team won’t be shown publicly.</p>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section style="background: linear-gradient(180deg, #F7FAFF 0%, #EEF5FF 100%); border-top: 1px solid #E8EEF7">
+<div class="fw-wrap" style="padding-top: 88px; padding-bottom: 88px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 32px">
+<div style="max-width: 600px">
+<h2 class="fw-h2" style="margin: 0; font-size: 36px; line-height: 1.15; font-weight: 700; letter-spacing: -0.025em">Have a problem that needs more than a chatbot?</h2>
+<p style="margin: 16px 0 0; font-size: 17px; line-height: 1.6; color: #5B6B82">Tell us how the work gets done today. We’ll show you where AI fits.</p>
+</div>
+<a class="fw-btn fw-btn-primary" href="Main.dc.html" style="display: inline-flex; align-items: center; height: 50px; padding: 0 24px; background: #2E5391; color: #FFFFFF; border-radius: 8px; font-size: 15px; font-weight: 600">Contact us</a>
+</div>
+</section>
+
+<footer style="background: #FFFFFF; border-top: 1px solid #E8EEF7">
+<div class="fw-wrap fw-foot" style="padding-top: 56px; padding-bottom: 40px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 320px">
+<a href="Main.dc.html" aria-label="Framewise.ai home" style="display: flex; align-items: center; gap: 10px; color: #14233B">
+<svg width="22" height="22" viewBox="0 0 400 400" fill="none" aria-hidden="true"><rect x="0" y="8" width="400" height="106" rx="53" fill="#2E5391"></rect><rect x="0" y="138" width="246" height="106" rx="53" fill="#4775C9"></rect><rect x="0" y="270" width="108" height="120" rx="44" fill="#4775C9"></rect></svg>
+<span style="font-size: 17px; font-weight: 700">Framewise<span style="color: #4775C9">.ai</span></span>
+</a>
+<p style="margin: 0; font-size: 14px; line-height: 1.6; color: #5B6B82">AI systems, built around the way businesses actually work.</p>
+</div>
+<nav class="fw-nav" aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 32px; font-size: 14px; font-weight: 500; align-items: flex-start">
+<a href="Main.dc.html">Projects</a>
+<a href="Blog.dc.html">Blog</a>
+<a href="About.dc.html">About Us</a>
+<a href="Main.dc.html">Contact</a>
+<a href="https://www.linkedin.com/company/cliqq-ai">LinkedIn</a>
+</nav>
+</div>
+<div class="fw-wrap" style="padding-bottom: 32px">
+<div style="border-top: 1px solid #EDF1F7; padding-top: 24px; font-size: 13px; color: #5B6B82">© Framewise.ai Pvt. Ltd, 2026</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2060}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { menuOpen: false };
+  }
+  renderVals() {
+    var open = !!this.state.menuOpen;
+    return {
+      menuOpen: open,
+      menuLabel: open ? 'Close menu' : 'Open menu',
+      toggleMenu: () => this.setState({ menuOpen: !this.state.menuOpen }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      steps: [
+        { n: '01', t: 'Understand', d: 'We map the workflow, the people in it, the data it depends on and the constraints it runs under.' },
+        { n: '02', t: 'Architect', d: 'We design a system that fits your environment — the right models, logic and integration points.' },
+        { n: '03', t: 'Build', d: 'We engineer it on our platform components, tested against the edge cases your operation actually sees.' },
+        { n: '04', t: 'Integrate', d: 'We connect it to your systems and teams, and stay with it until it works in production.' }
+      ],
+      areas: [
+        { t: 'VoicEra', d: 'An open-source voice AI stack for real-time telephony agents in Indian languages, on infrastructure you control.' },
+        { t: 'Dhara', d: 'An open toolkit that makes datasets discoverable and AI-ready, from inventory to catalogue to API access.' },
+        { t: 'Human in the Loop', d: 'AI that hands over at the right moment, so your people review, approve or step in inside the systems they already use.' },
+        { t: 'Mock Interviews', d: 'AI-led interviews with feedback that improves through reinforcement learning — more than 120,000 minutes in conversation.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

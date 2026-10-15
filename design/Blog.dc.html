@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Framewise.ai — Blog &amp; Gallery</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+a{color:#2E5391;text-decoration:none}
+a:hover{color:#23437A}
+.fw-wrap{max-width:1264px;margin:0 auto;padding:0 40px}
+.fw-nav a{color:#3F4E66;transition:color .2s}
+.fw-nav a:hover{color:#14233B}
+.fw-nav a:focus-visible,.fw-menu:focus-visible,.fw-pill:focus-visible,.fw-post:focus-visible{outline:2px solid #4775C9;outline-offset:3px}
+.fw-menu{display:none}
+.fw-posts{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:24px}
+.fw-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.fw-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px}
+.fw-dots{background-image:radial-gradient(#CFDDF3 1px,transparent 1px);background-size:20px 20px}
+.fw-post{transition:border-color .2s}
+.fw-post:hover{border-color:#BFD2F0 !important}
+.fw-pill{transition:background-color .2s,border-color .2s,color .2s}
+@media (max-width:1080px){.fw-posts{grid-template-columns:minmax(0,1fr)}.fw-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.fw-wrap{padding:0 20px}.fw-nav{display:none !important}.fw-menu{display:inline-flex}.fw-gallery{grid-template-columns:minmax(0,1fr)}.fw-h1{font-size:40px !important}.fw-h2{font-size:30px !important}.fw-sec{padding-top:64px !important;padding-bottom:64px !important}}
+</style>
+</helmet>
+
+<div style="font-family: 'Manrope', system-ui, sans-serif; color: #14233B; background: #FFFFFF; -webkit-font-smoothing: antialiased">
+
+<header style="position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.86); backdrop-filter: blur(12px); border-bottom: 1px solid #EDF1F7">
+<div class="fw-wrap" style="height: 72px; display: flex; align-items: center; justify-content: space-between">
+<a href="Main.dc.html" aria-label="Framewise.ai home" style="display: flex; align-items: center; gap: 10px; color: #14233B">
+<svg width="26" height="26" viewBox="0 0 400 400" fill="none" aria-hidden="true"><rect x="0" y="8" width="400" height="106" rx="53" fill="#2E5391"></rect><rect x="0" y="138" width="246" height="106" rx="53" fill="#4775C9"></rect><rect x="0" y="270" width="108" height="120" rx="44" fill="#4775C9"></rect></svg>
+<span style="font-size: 19px; font-weight: 700; letter-spacing: -0.01em">Framewise<span style="color: #4775C9">.ai</span></span>
+</a>
+<nav class="fw-nav" aria-label="Primary" style="display: flex; align-items: center; gap: 36px; font-size: 15px; font-weight: 500">
+<a href="Main.dc.html">Projects</a>
+<a href="Blog.dc.html" aria-current="page" style="color: #14233B; font-weight: 600; box-shadow: inset 0 -2px 0 #4775C9; padding: 6px 0">Blog</a>
+<a href="About.dc.html">About Us</a>
+<a href="Main.dc.html">Contact</a>
+</nav>
+<button class="fw-menu" type="button" aria-label="{{menuLabel}}" aria-expanded="{{menuOpen}}" onClick="{{toggleMenu}}" style="width: 44px; height: 44px; align-items: center; justify-content: center; background: #FFFFFF; border: 1px solid #E3EAF4; border-radius: 8px; cursor: pointer; color: #14233B">
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"></path></svg>
+</button>
+</div>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+<nav aria-label="Mobile" style="border-top: 1px solid #EDF1F7; background: #FFFFFF; padding: 8px 20px 16px; display: flex; flex-direction: column">
+<a href="Main.dc.html" onClick="{{closeMenu}}" style="padding: 14px 0; font-size: 17px; font-weight: 600; color: #14233B; border-bottom: 1px solid #F0F3F8">Projects</a>
+<a href="Blog.dc.html" onClick="{{closeMenu}}" style="padding: 14px 0; font-size: 17px; font-weight: 600; color: #2E5391; border-bottom: 1px solid #F0F3F8">Blog</a>
+<a href="About.dc.html" onClick="{{closeMenu}}" style="padding: 14px 0; font-size: 17px; font-weight: 600; color: #14233B; border-bottom: 1px solid #F0F3F8">About Us</a>
+<a href="Main.dc.html" onClick="{{closeMenu}}" style="padding: 14px 0; font-size: 17px; font-weight: 600; color: #14233B">Contact</a>
+</nav>
+</sc-if>
+</header>
+
+<!-- INTRO -->
+<section style="background: linear-gradient(180deg, #F5F9FF 0%, #FFFFFF 100%)">
+<div class="fw-wrap" style="padding-top: 88px; padding-bottom: 56px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+<div style="max-width: 720px">
+<div style="font-size: 13px; font-weight: 600; color: #2E5391; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 18px">Blog</div>
+<h1 class="fw-h1" style="margin: 0; font-size: 54px; line-height: 1.08; font-weight: 700; letter-spacing: -0.03em">Notes from the build.</h1>
+<p style="margin: 22px 0 0; max-width: 560px; font-size: 18px; line-height: 1.6; color: #5B6B82">Project updates, engineering notes and photos from the work behind VoicEra, Dhara and the systems we build.</p>
+</div>
+<a href="#gallery" style="font-size: 15px; font-weight: 600">Jump to gallery ↓</a>
+</div>
+</section>
+
+<!-- POSTS -->
+<section class="fw-sec" style="padding-top: 24px; padding-bottom: 96px">
+<div class="fw-wrap fw-posts">
+
+<a class="fw-post" href="https://github.com/COSS-India/VoicEra" style="display: flex; flex-direction: column; border: 1px solid #E3EAF4; border-radius: 16px; overflow: hidden; color: #14233B; background: #FFFFFF">
+<div class="fw-dots" style="height: 300px; background-color: #EEF5FF; border-bottom: 1px solid #E3EAF4; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; color: #5B6B82">
+<svg width="28" height="28" viewBox="0 0 20 20" fill="none" stroke="#4775C9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3.5" width="16" height="13" rx="2"></rect><path d="m2.5 14 4.5-4.5 3.5 3.5 2-2 5 5"></path><circle cx="13.5" cy="7.5" r="1.5"></circle></svg>
+<span style="font-size: 13px; font-weight: 600">[Cover photo: VoicEra launch]</span>
+</div>
+<div style="padding: 28px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 600; color: #5B6B82">
+<span style="color: #2E5391; background: #EEF5FF; border-radius: 5px; padding: 3px 8px">VoicEra</span><span>February 2026</span><span style="border: 1px dashed #C9D7EE; border-radius: 5px; padding: 2px 7px">Draft</span>
+</div>
+<h2 style="margin: 0; font-size: 26px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02em">VoicEra launches on BHASHINI at the India AI Impact Summit</h2>
+<p style="margin: 0; font-size: 15.5px; line-height: 1.65; color: #5B6B82">An open-source, end-to-end voice AI stack for real-time telephony agents in Indian languages — built to run on infrastructure its operators control.</p>
+<span style="font-size: 14px; font-weight: 600; color: #2E5391">Read more →</span>
+</div>
+</a>
+
+<div style="display: flex; flex-direction: column; gap: 24px">
+<a class="fw-post" href="https://github.com/Project-Dhara/Dhara" style="display: flex; gap: 20px; align-items: stretch; border: 1px solid #E3EAF4; border-radius: 16px; overflow: hidden; color: #14233B; background: #FFFFFF">
+<div style="flex: none; width: 170px; background: #FFFFFF; border-right: 1px solid #E3EAF4; display: flex; align-items: center; justify-content: center; padding: 16px">
+<img src="/assets/dhara-logo.png" alt="Data DHARA logo" style="width: 100%; height: auto; display: block">
+</div>
+<div style="padding: 22px 22px 22px 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 600; color: #5B6B82">
+<span style="color: #2E5391; background: #EEF5FF; border-radius: 5px; padding: 3px 8px">Dhara</span><span>August 2026</span><span style="border: 1px dashed #C9D7EE; border-radius: 5px; padding: 2px 7px">Draft</span>
+</div>
+<h3 style="margin: 0; font-size: 19px; line-height: 1.3; font-weight: 700">Data DHARA: one workflow to make government data AI-ready</h3>
+<p style="margin: 0; font-size: 14.5px; line-height: 1.6; color: #5B6B82">From inventory to catalogue to API and MCP access, in seven stages.</p>
+</div>
+</a>
+
+<a class="fw-post" href="Main.dc.html" style="display: flex; gap: 20px; align-items: stretch; border: 1px solid #E3EAF4; border-radius: 16px; overflow: hidden; color: #14233B; background: #FFFFFF">
+<div class="fw-dots" style="flex: none; width: 170px; background-color: #F7FAFF; border-right: 1px solid #E3EAF4; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #5B6B82; text-align: center; padding: 12px">[Cover photo]</div>
+<div style="padding: 22px 22px 22px 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 600; color: #5B6B82">
+<span style="color: #2E5391; background: #EEF5FF; border-radius: 5px; padding: 3px 8px">Mock Interviews</span><span style="border: 1px dashed #C9D7EE; border-radius: 5px; padding: 2px 7px">Draft</span>
+</div>
+<h3 style="margin: 0; font-size: 19px; line-height: 1.3; font-weight: 700">What 120,000 minutes of AI interviews taught us</h3>
+<p style="margin: 0; font-size: 14.5px; line-height: 1.6; color: #5B6B82">[Post to be written — lessons on feedback quality and reinforcement learning.]</p>
+</div>
+</a>
+</div>
+
+</div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="fw-sec" style="padding-top: 96px; padding-bottom: 112px; background: #F7FAFF; border-top: 1px solid #E8EEF7; scroll-margin-top: 72px">
+<div class="fw-wrap">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 32px">
+<div>
+<div style="font-size: 13px; font-weight: 600; color: #2E5391; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px">Gallery</div>
+<h2 class="fw-h2" style="margin: 0; font-size: 40px; line-height: 1.12; font-weight: 700; letter-spacing: -0.025em">From the field.</h2>
+</div>
+<div role="group" aria-label="Filter gallery by project" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{filters}}" as="f" hint-placeholder-count="5">
+<button class="fw-pill" type="button" aria-pressed="{{f.pressed}}" onClick="{{f.pick}}" style="{{f.style}}">{{f.label}}</button>
+</sc-for>
+</div>
+</div>
+
+<div class="fw-gallery">
+<sc-for list="{{shots}}" as="g" hint-placeholder-count="6">
+<figure style="margin: 0; background: #FFFFFF; border: 1px solid #E3EAF4; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column">
+<sc-if value="{{g.hasImg}}" hint-placeholder-val="{{ false }}">
+<div style="aspect-ratio: 4 / 3; background: #FFFFFF; display: flex; align-items: center; justify-content: center; padding: 28px; border-bottom: 1px solid #EDF1F7">
+<img src="{{g.src}}" alt="{{g.alt}}" style="max-width: 100%; max-height: 100%; display: block; object-fit: contain">
+</div>
+</sc-if>
+<sc-if value="{{g.noImg}}" hint-placeholder-val="{{ true }}">
+<div class="fw-dots" style="aspect-ratio: 4 / 3; background-color: #EEF5FF; border-bottom: 1px solid #E3EAF4; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #5B6B82; padding: 20px; text-align: center">
+<svg width="26" height="26" viewBox="0 0 20 20" fill="none" stroke="#4775C9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3.5" width="16" height="13" rx="2"></rect><path d="m2.5 14 4.5-4.5 3.5 3.5 2-2 5 5"></path><circle cx="13.5" cy="7.5" r="1.5"></circle></svg>
+<span style="font-size: 12.5px; font-weight: 600">{{g.slot}}</span>
+</div>
+</sc-if>
+<figcaption style="padding: 16px 18px; display: flex; justify-content: space-between; align-items: center; gap: 12px">
+<span style="font-size: 14px; font-weight: 600; color: #14233B">{{g.caption}}</span>
+<span style="flex: none; font-size: 11.5px; font-weight: 600; color: #2E5391; background: #EEF5FF; border-radius: 5px; padding: 3px 8px">{{g.project}}</span>
+</figcaption>
+</figure>
+</sc-for>
+</div>
+</div>
+</section>
+
+<footer style="background: #FFFFFF; border-top: 1px solid #E8EEF7">
+<div class="fw-wrap fw-foot" style="padding-top: 56px; padding-bottom: 40px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 320px">
+<a href="Main.dc.html" aria-label="Framewise.ai home" style="display: flex; align-items: center; gap: 10px; color: #14233B">
+<svg width="22" height="22" viewBox="0 0 400 400" fill="none" aria-hidden="true"><rect x="0" y="8" width="400" height="106" rx="53" fill="#2E5391"></rect><rect x="0" y="138" width="246" height="106" rx="53" fill="#4775C9"></rect><rect x="0" y="270" width="108" height="120" rx="44" fill="#4775C9"></rect></svg>
+<span style="font-size: 17px; font-weight: 700">Framewise<span style="color: #4775C9">.ai</span></span>
+</a>
+<p style="margin: 0; font-size: 14px; line-height: 1.6; color: #5B6B82">AI systems, built around the way businesses actually work.</p>
+</div>
+<nav class="fw-nav" aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 32px; font-size: 14px; font-weight: 500; align-items: flex-start">
+<a href="Main.dc.html">Projects</a>
+<a href="Blog.dc.html">Blog</a>
+<a href="About.dc.html">About Us</a>
+<a href="Main.dc.html">Contact</a>
+<a href="https://www.linkedin.com/company/cliqq-ai">LinkedIn</a>
+</nav>
+</div>
+<div class="fw-wrap" style="padding-bottom: 32px">
+<div style="border-top: 1px solid #EDF1F7; padding-top: 24px; font-size: 13px; color: #5B6B82">© Framewise.ai Pvt. Ltd, 2026</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2300}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { menuOpen: false, filter: 'All' };
+  }
+  renderVals() {
+    var open = !!this.state.menuOpen;
+    var cur = this.state.filter || 'All';
+    var all = [
+      { project: 'Dhara', caption: 'Data DHARA identity', src: '/assets/dhara-logo.png', alt: 'Data DHARA logo', slot: '' },
+      { project: 'VoicEra', caption: 'Launch at India AI Impact Summit', src: '', alt: '', slot: '[Add photo: VoicEra launch, Feb 2026]' },
+      { project: 'VoicEra', caption: 'Dashboard & live calls', src: '', alt: '', slot: '[Add screenshot: VoicEra dashboard]' },
+      { project: 'Dhara', caption: 'Delhi workshop launch', src: '', alt: '', slot: '[Add photo: Data DHARA launch, Aug 2026]' },
+      { project: 'Mock Interviews', caption: 'Candidate feedback view', src: '', alt: '', slot: '[Add screenshot: feedback report]' },
+      { project: 'Human in the Loop', caption: 'Review queue', src: '', alt: '', slot: '[Add screenshot: reviewer console]' }
+    ];
+    var shots = all.filter(function (s) { return cur === 'All' || s.project === cur; }).map(function (s) {
+      return Object.assign({}, s, { hasImg: !!s.src, noImg: !s.src });
+    });
+    var self = this;
+    var filters = ['All', 'VoicEra', 'Dhara', 'Human in the Loop', 'Mock Interviews'].map(function (l) {
+      var on = l === cur;
+      return {
+        label: l,
+        pressed: on ? 'true' : 'false',
+        pick: function () { self.setState({ filter: l }); },
+        style: 'height:40px;padding:0 16px;border-radius:8px;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;' + (on ? 'background:#2E5391;color:#FFFFFF;border:1px solid #2E5391' : 'background:#FFFFFF;color:#3F4E66;border:1px solid #DCE4F0')
+      };
+    });
+    return {
+      menuOpen: open,
+      menuLabel: open ? 'Close menu' : 'Open menu',
+      toggleMenu: () => this.setState({ menuOpen: !this.state.menuOpen }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      filters: filters,
+      shots: shots
+    };
+  }
+}
+</script>
+</body>
+</html>
